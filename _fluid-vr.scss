@@ -1,0 +1,78 @@
+//Set default variables so nothing breaks if variables aren't assigned.
+$fv-min-vw: 320px !default;
+$fv-max-vw: 1200px !default;
+$fv-min-fs: 14px !default;  
+$fv-max-fs: 18px !default;
+$fv-baseline: $fv-max-fs !default;
+$fv-line-height: 1.5 !default;
+$fv-cap-height: 0.68 !default;
+
+/**
+* Helper functions
+* 1. Strips Unit from value.
+* 2. Generates a a rem unit from a pixel value and base font size.
+* 3. Generates a percent value from a rem unit.
+*/
+
+// 1.
+@function fv-strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+// 2.
+@function fv-px-to-rem($pxval, $base: 16) {
+  @if not unitless($pxval) {
+    $pxval: strip-unit($pxval);
+  }
+
+  @return ($pxval / $base) * 1rem;
+}
+
+// 3.
+@function fv-rem-to-percent($percent) {
+	$value: strip-unit($percent);
+	@return ( $value * 100 ) + %;
+}
+
+/**
+* Fluid Vr
+*/
+
+//Make sure the basline uses a rem value always.
+$fv-baseline: fv-px-to-rem($fv-baseline);
+
+@mixin fluid-type() {
+  $fv-min-vw: fv-px-to-rem($fv-min-vw);
+  $fv-max-vw: fv-px-to-rem($fv-max-vw);
+  $fv-min-fs: fv-px-to-rem($fv-min-fs);
+  $fv-max-fs: fv-px-to-rem($fv-max-fs);
+
+  font-size: $fv-min-fs;  
+  line-height: fluid-lh();
+
+  @media screen and (min-width: $fv-min-vw) {
+    font-size: calc(#{fv-rem-to-percent($fv-min-fs)} + #{fv-strip-unit($fv-max-fs - $fv-min-fs)} * ((100vw - #{fv-rem-to-percent($fv-min-vw)}) / #{fv-strip-unit($fv-max-vw - $fv-min-vw)})); 
+  }
+
+  @media screen and (min-width: $fv-max-vw) {
+    font-size: $fv-max-fs;
+  }
+}
+
+@mixin fluid-baseline( $size, $cap-height : $fv-cap-height ) {
+  $size: fv-px-to-rem($size);
+  $baseline-distance: ($size - $cap-height) / 2;
+
+  font-size: $size;
+  line-height: fluid-lh();
+  padding-top: $baseline-distance;
+  margin-bottom: $fv-baseline;
+}
+
+@mixin fluid-mb() {
+  margin-bottom: $fv-baseline;
+}
+
+@function fluid-lh() {
+  @return ( $fv-line-height * 100 ) + %;
+}
