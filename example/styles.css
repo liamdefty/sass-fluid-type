@@ -1,0 +1,66 @@
+@import url(../node_modules/normalize.css/normalize.css);
+body,
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+form, fieldset, legend,
+table, th, td, caption,
+hr, figure, figcaption {
+  margin: 0;
+  padding: 0; }
+
+ul, ol {
+  margin: 0; }
+
+html {
+  font-size: 14px;
+  line-height: 150%; }
+  @media screen and (min-width: 20rem) {
+    html {
+      font-size: calc(87.5% + 0.25 * ((100vw - 2000%) / 55)); } }
+  @media screen and (min-width: 75rem) {
+    html {
+      font-size: 1.125rem; } }
+
+.container {
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 1rem; }
+
+h1 {
+  line-height: 150%;
+  font-size: 1.44444rem;
+  padding-top: 0.41rem;
+  margin-bottom: 1.09rem; }
+
+h2 {
+  line-height: 150%;
+  font-size: 1.33333rem;
+  padding-top: 0.41rem;
+  margin-bottom: 1.09rem; }
+
+h3 {
+  line-height: 150%;
+  font-size: 1.22222rem;
+  padding-top: 0.41rem;
+  margin-bottom: 1.09rem; }
+
+h4 {
+  line-height: 150%;
+  font-size: 1.11111rem;
+  padding-top: 0.41rem;
+  margin-bottom: 1.09rem; }
+
+h5 {
+  line-height: 150%;
+  font-size: 1rem;
+  padding-top: 0.41rem;
+  margin-bottom: 1.09rem; }
+
+h6 {
+  line-height: 150%;
+  font-size: 0.88889rem;
+  padding-top: 0.41rem;
+  margin-bottom: 1.09rem; }
+
+p, ul, ol {
+  margin-bottom: 1rem; }

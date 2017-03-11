@@ -1,0 +1,37 @@
+{
+  "name": "sass-fluid-vr",
+  "version": "0.0.1",
+  "description": "A set of Sass mixins for creating fluid vertical ryhtm using the vw unit and calc.",
+  "main": "_fluid-vr.scss",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "postinstall" : "npm run sass",
+    "sass" : "node-sass example/styles.scss example/styles.css",
+    "sass-watch": "node-sass example/styles.scss example/styles.css --watch",
+    "clean": "rm example/styles.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liam-defty/sass-fluid-vr.git"
+  },
+  "keywords": [
+    "sass",
+    "fluid",
+    "vertical-rhythm",
+    "rhythm",
+    "typography",
+    "css"
+  ],
+  "author": "Liam Defty",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/liam-defty/sass-fluid-vr/issues"
+  },
+  "homepage": "https://github.com/liam-defty/sass-fluid-vr#readme",
+  "devDependencies": {
+    "node-sass": "^4.5.0",
+    "normalize.css": "^5.0.0"
+  }
+}

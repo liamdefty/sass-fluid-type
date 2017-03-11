@@ -1,0 +1,53 @@
+@import "../node_modules/normalize.css/normalize.css";
+
+body,
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+form, fieldset, legend,
+table, th, td, caption,
+hr, figure, figcaption {
+  margin: 0;
+  padding: 0;
+}
+
+ul, ol {
+	margin: 0;
+}
+
+$fv-min-vw: 320px;
+$fv-max-vw: 1200px;
+$fv-min-fs: 14px;  
+$fv-max-fs: 18px;
+$fv-line-height: 1.5;
+$fv-cap-height: 0.68;
+
+@import "../_fluid-vr.scss";
+
+$header-sizes: ( 
+	h1: 26px,
+	h2: 24px,
+	h3: 22px,
+	h4: 20px,
+	h5: 18px,
+	h6: 16px
+);
+
+html {
+	@include fluid-type;
+}
+
+.container {
+	max-width: 1220px;
+	margin: 0 auto;
+	padding: 0 1rem;
+}
+
+@for $i from 1 through 6 {
+	h#{$i} {
+		@include fluid-baseline(map-get($header-sizes, h#{$i}));
+	}
+}
+
+p, ul, ol {	
+	@include fluid-mb();
+}
