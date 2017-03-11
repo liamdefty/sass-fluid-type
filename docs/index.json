@@ -1,4 +1,10 @@
-{
-  "getting-started": "Get Started",
-  "what-is-it": "What is it"
- }
+[
+  {
+  	"title": "Get Started",
+  	"file": "get-started"
+  },
+  { 
+  	"title": "What is it",
+  	"file": "what-is-it"
+  }
+ ]
