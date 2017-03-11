@@ -1,13 +1,12 @@
 {
   "name": "sass-fluid-vr",
   "version": "0.0.1",
-  "description": "A set of Sass mixins for creating fluid vertical ryhtm using the vw unit and calc.",
+  "description": "A set of Sass mixins for creating fluid vertical rhythm using the vw unit and calc.",
   "main": "_fluid-vr.scss",
   "directories": {
     "example": "example"
   },
   "scripts": {
-    "postinstall" : "npm run sass",
     "sass" : "node-sass example/styles.scss example/styles.css",
     "sass-watch": "node-sass example/styles.scss example/styles.css --watch",
     "clean": "rm example/styles.css"
