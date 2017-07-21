@@ -1,6 +1,6 @@
 # Fluid Vr
 
-An experimental set of Sass mixins for creating fluid vertical rhythm using the vw unit and calc. 
+An experimental set of Sass mixins for creating fluid type & vertical rhythm using the vw unit and calc. 
 
 ## Getting Started
 
