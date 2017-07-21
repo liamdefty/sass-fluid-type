@@ -14,26 +14,19 @@ ul, ol {
 	margin: 0;
 }
 
-$fv-min-vw: 320px;
-$fv-max-vw: 1200px;
-$fv-min-fs: 14px;  
-$fv-max-fs: 18px;
-$fv-line-height: 1.5;
-$fv-cap-height: 0.68;
-
 @import "../_fluid-vr.scss";
 
-$header-sizes: ( 
-	h1: 26px,
-	h2: 24px,
-	h3: 22px,
-	h4: 20px,
-	h5: 18px,
-	h6: 16px
+
+$fluid-base: (
+    min-vw: 320px,
+    max-vw: 1200px,
+    min-fs: 12px,
+    max-fs: 18px,
+    line-height: 1.5
 );
 
 html {
-	@include fluid-type;
+	@include fluid();
 }
 
 .container {
@@ -42,12 +35,65 @@ html {
 	padding: 0 1rem;
 }
 
+$header-sizes: (
+	h1: 28px,
+	h2: 26px,
+	h3: 24px,
+	h4: 22px,
+	h5: 20px,
+	h6: 18px
+);
+
 @for $i from 1 through 6 {
 	h#{$i} {
-		@include fluid-baseline(map-get($header-sizes, h#{$i}));
+		@include fluid-baseline(map-get($header-sizes, h#{$i}), 0.68);
 	}
 }
 
-p, ul, ol {	
-	@include fluid-mb();
+p, ul, ol {
+	margin-bottom: 1rem;
+}
+
+$fluid-component: (
+    min-vw: 320px,
+    max-vw: 1200px,
+    min-fs: 18px,
+    max-fs: 26px,
+    line-height: 1
+);
+
+.fluid {
+    @include fluid($fluid-component);
+    border: 1px solid black;
+    padding: 1em;
+    margin-bottom: 1rem;
+    text-align: center;
+
+    & h1 {
+        margin-bottom: 1em;
+    }
+
+    & img {
+        width: 100%;
+    }
+}
+
+.not-fluid {
+    border: 1px solid black;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+
+    & h1 {
+        font-size: 26px;
+        margin-bottom: 20px;
+    }
+
+    & p {
+        font-size: 26px;
+    }
+
+    & img {
+        width: 100%;
+    }
 }

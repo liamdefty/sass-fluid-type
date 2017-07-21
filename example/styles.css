@@ -11,12 +11,34 @@ hr, figure, figcaption {
 ul, ol {
   margin: 0; }
 
+/**
+* Remove unit from a number so we can math.
+*/
+/**
+* We use a percentage value when instead of a rem value on the fluid font size
+* so that it plays nice with IE and Safari.
+*/
+/**
+* Convert line height to percentage for cross browser compatibility.
+*/
+/**
+* Mixin to create fluid type based on options provided - defaults to base options.
+*/
+/**
+* Helper function to get a key value from the base options map.
+*/
+/**
+* Helper function to convert px to rem for the baseline. This will help keep things fluid.
+*/
+/**
+* Optional mixin to help create a nice vertical rythm. Search "vertical ryhtm golden ratio".
+*/
 html {
-  font-size: 14px;
+  font-size: 12px;
   line-height: 150%; }
   @media screen and (min-width: 20rem) {
     html {
-      font-size: calc(87.5% + 0.25 * ((100vw - 2000%) / 55)); } }
+      font-size: calc(75% + 0.375 * ((100vw - 2000%) / 55)); } }
   @media screen and (min-width: 75rem) {
     html {
       font-size: 1.125rem; } }
@@ -28,39 +50,70 @@ html {
 
 h1 {
   line-height: 150%;
-  font-size: 1.44444rem;
+  font-size: 1.55556rem;
   padding-top: 0.41rem;
   margin-bottom: 1.09rem; }
 
 h2 {
   line-height: 150%;
-  font-size: 1.33333rem;
+  font-size: 1.44444rem;
   padding-top: 0.41rem;
   margin-bottom: 1.09rem; }
 
 h3 {
   line-height: 150%;
-  font-size: 1.22222rem;
+  font-size: 1.33333rem;
   padding-top: 0.41rem;
   margin-bottom: 1.09rem; }
 
 h4 {
   line-height: 150%;
-  font-size: 1.11111rem;
+  font-size: 1.22222rem;
   padding-top: 0.41rem;
   margin-bottom: 1.09rem; }
 
 h5 {
   line-height: 150%;
-  font-size: 1rem;
+  font-size: 1.11111rem;
   padding-top: 0.41rem;
   margin-bottom: 1.09rem; }
 
 h6 {
   line-height: 150%;
-  font-size: 0.88889rem;
+  font-size: 1rem;
   padding-top: 0.41rem;
   margin-bottom: 1.09rem; }
 
 p, ul, ol {
   margin-bottom: 1rem; }
+
+.fluid {
+  font-size: 18px;
+  line-height: 100%;
+  border: 1px solid black;
+  padding: 1em;
+  margin-bottom: 1rem;
+  text-align: center; }
+  @media screen and (min-width: 20rem) {
+    .fluid {
+      font-size: calc(112.5% + 0.5 * ((100vw - 2000%) / 55)); } }
+  @media screen and (min-width: 75rem) {
+    .fluid {
+      font-size: 1.625rem; } }
+  .fluid h1 {
+    margin-bottom: 1em; }
+  .fluid img {
+    width: 100%; }
+
+.not-fluid {
+  border: 1px solid black;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 20px; }
+  .not-fluid h1 {
+    font-size: 26px;
+    margin-bottom: 20px; }
+  .not-fluid p {
+    font-size: 26px; }
+  .not-fluid img {
+    width: 100%; }
