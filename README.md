@@ -4,7 +4,7 @@ An experimental set of Sass mixins for creating fluid type & vertical rhythm usi
 
 ## Getting Started
 
-Include `_fluid-vr.scss` in your project. Or, if you use npm, `npm install liam-defty/sass-fluid-vr`.
+Include `_fluid-type.scss` in your project. Or, if you use npm, `npm install liam-defty/sass-fluid-type`.
 
 ## What is it?
 
