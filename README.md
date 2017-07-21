@@ -1,4 +1,4 @@
-# Fluid Vr
+# Fluid Type
 
 An experimental set of Sass mixins for creating fluid type & vertical rhythm using the vw unit and calc. 
 
